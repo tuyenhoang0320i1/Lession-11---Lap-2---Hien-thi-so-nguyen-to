@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Hiển thị các số nguyên tố đầu tiên</title>
+</head>
+<body>
+<script>
+    function isPrime(number) {
+        if (number < 2) {
+            //truong hop dk loai tru snt 0 1 deu chia het cho chinh no
+            return false;
+        } else {
+            for (i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i == 0) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    function displayPrimeList(quantity) {
+        let count = 0;
+        let i = 2;
+        while (count < quantity) {
+            if (isPrime(i) == true) {
+                document.write(i + " ");
+                count++;
+            }
+            i++;
+        }
+    }
+    let quantity = prompt("Nhap so luong so nguyen to ban muon hien thi: ");
+    displayPrimeList(quantity);
+</script>
+</body>
+</html>
